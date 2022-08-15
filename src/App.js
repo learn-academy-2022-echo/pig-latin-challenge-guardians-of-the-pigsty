@@ -33,7 +33,34 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
+
+
     
+
+
+
+
+
+
+
+
+
+
+
+      // Psuedo Code 
+      // set up conditional statement
+      //  .splice()
+      //
+      //
+
+      let passVar;
+      if(vowelsArray.includes("q") === true )
+       { passVar = eachWord.slice(0,3)
+        return eachWord + passVar + "ay"
+      } 
+      
+      console.log()
+
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
@@ -52,6 +79,7 @@ const App = () => {
     setUserInput("apple through queen squeal fry fluent")
     setInputTranslated("")
   }
+
 
   // NO MODIFICATION NEEDED: this method prevents React from refreshing the page unnecessarily
   const setUpPreventDefault = (e) => {
