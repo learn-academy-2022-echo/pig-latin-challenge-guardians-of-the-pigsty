@@ -33,12 +33,44 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
-    
+// In order to see English words converted to Pig Latin, as the user of the application, I need to see words beginning with a vowel translated to add "way" the end.
+
+// PSUEDOCODE: 
+// how to recognize when a vowel is a the beginning of a word 
+// conditional statement if vowel is at the beginning of a word, to ouput word + way 
+// 
+
+// const firstVowel = () => {
+// if(arrayOfUserInput.indexOf([0]) === vowelsArray) {
+//   return `${arrayOfUserInput}way`
+// }
+// }
+
+const firstVowel = () => {
+  if(vowelsArray.includes(eachWord[0])) {
+    return eachWord + "way"
+  }
+  }
+
+console.log(firstVowel(arrayOfUserInput))
+
+// const vowels = ['a' , 'e', 'i', 'o', 'u']
+// if(vowels.include(eachWord[0]) {eachWord += "way"
+
+
+// In order to see English words converted to Pig Latin, as the user of the application, I need to see words that have "qu" in the first syllable translated by moving all the consonant and the "u" to the end and add "ay".
+
+// const qVowel = () => {
+//   if
+// }
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
-      return eachWord
+      return eachWord 
     })
 
+
+
+    // console.log(firstVowel(eachWord))
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
     const translatedWords = translatedWordsArray.join(" ")
     console.log("translatedWords:", translatedWords)
