@@ -5,7 +5,7 @@ import butcherPigImage from './assets/butcherPig.jpeg'
 const App = () => {
 
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
-  const [userInput, setUserInput] = useState("apple through queen squeal fry fluent")
+  const [userInput, setUserInput] = useState("apple operator through queen squeal fry fluent")
   const [inputTranslated, setInputTranslated] = useState("")
 
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
@@ -28,7 +28,7 @@ const App = () => {
           vowel === "o" || 
           vowel === "u"
         )
-      })
+     })
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
@@ -40,35 +40,25 @@ const App = () => {
 // conditional statement if vowel is at the beginning of a word, to ouput word + way 
 // 
 
-// const firstVowel = () => {
-// if(arrayOfUserInput.indexOf([0]) === vowelsArray) {
-//   return `${arrayOfUserInput}way`
-// }
-// }
-
-const firstVowel = () => {
+     let combineWord 
   if(vowelsArray.includes(eachWord[0])) {
-    return eachWord + "way"
+     combineWord = eachWord + "way"
   }
-  }
+  console.log(combineWord)
 
-console.log(firstVowel(arrayOfUserInput))
+// Story 2: In order to see English words converted to Pig Latin, as the user of the application, I need to see words that have "qu" in the first syllable translated by moving all the consonant and the "u" to the end and add "ay".**
 
-// const vowels = ['a' , 'e', 'i', 'o', 'u']
-// if(vowels.include(eachWord[0]) {eachWord += "way"
+// **Branch:** qu-functionality
 
+// **Acceptance Criteria**
 
-// In order to see English words converted to Pig Latin, as the user of the application, I need to see words that have "qu" in the first syllable translated by moving all the consonant and the "u" to the end and add "ay".
-
-// const qVowel = () => {
-//   if
-// }
+// - Can type any word that has a "qu" in the first syllable in the text input (e.g. squeal)
+// - Can hit the submit button
+// - Can see the words that have a "qu" in the first syllable translated to Pig Latin and rendered to the page (e.g. ealsquay)
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord 
     })
-
-
 
     // console.log(firstVowel(eachWord))
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
