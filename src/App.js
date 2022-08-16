@@ -5,7 +5,7 @@ import butcherPigImage from './assets/butcherPig.jpeg'
 const App = () => {
 
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
-  const [userInput, setUserInput] = useState("apple operator through queen squeal fry fluent")
+  const [userInput, setUserInput] = useState("")
   const [inputTranslated, setInputTranslated] = useState("")
 
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
@@ -36,25 +36,61 @@ const App = () => {
 // In order to see English words converted to Pig Latin, as the user of the application, I need to see words beginning with a vowel translated to add "way" the end.
 
 // PSUEDOCODE: 
-// how to recognize when a vowel is a the beginning of a word 
-// conditional statement if vowel is at the beginning of a word, to ouput word + way 
-// 
 
-     let combineWord 
-  if(vowelsArray.includes(eachWord[0])) {
-     combineWord = eachWord + "way"
+// variables already declared: 
+
+    //  const translatedWordsArray = arrayOfUserInput.map(eachWord => {
+      // console.log("eachWord:", eachWord)
+
+    //   const vowelsArray = eachWord.split("").filter(vowel => {
+    //     return (
+    //       vowel === "a" || 
+    //       vowel === "e" || 
+    //       vowel === "i" || 
+    //       vowel === "o" || 
+    //       vowel === "u"
+    //     )
+    //  })
+
+
+
+  // step 1: if eachWords first letter starts with the value at the first index in vowelsArray, return eachWord + "way"
+  // step 2: if eachWord contain "q" and "u"
+  // declare a variable name beforeQu to slice string at the index of 0 plus 1 
+  // declare a variable named afterQu to store the string that is after the vowel plus 1 
+  // reassign eachWord to be assigned afterQu + beforeQu + "ay"
+  // step 3: if eachWord does not contain vowels other than "y" but contain the letter "y" return all consonants at the end + "ay"
+  // declare a variable named to index of "y"
+  // declare a variable named beforeY to slice eachWord at index of 0 & yindex 
+  // declare a variable named afterY to slice at yindex
+  // reassign eachWord to string together afterY+beforeY+"ay"
+  // step 4: if eachWord has multiple consonants, locate indexOfVowel
+  // declare a variable called beforeCons to slice the eachWord idex at 0 and indexOfVowel
+  // delcare a variable called afterCons to slice indexOfVowel 
+  // resassign eachWord to string afterCons + beforeCons + "ay"
+
+  let indexOfVowel = eachWord.indexOf(vowelsArray[0])
+
+  if(eachWord.charAt(0) === vowelsArray[0]) {
+return eachWord + "way"
+  } else if(eachWord[indexOfVowel] === "u" && eachWord[indexOfVowel -1] === "q") {
+    let beforeQu = eachWord.slice(0, indexOfVowel +1) 
+    let afterQu = eachWord.slice(indexOfVowel + 1)
+      eachWord = afterQu + beforeQu + "ay"
+  } else if(eachWord[0] !== "y" && eachWord.includes ("y")) {
+    let yindex = eachWord.indexOf("y")
+    let beforeY = eachWord.slice(0, yindex)
+    let afterY = eachWord.slice(yindex)
+    eachWord = afterY + beforeY + "ay"
+  } else if(eachWord[0] !== vowelsArray[0]) {
+    let afterCons = eachWord.slice(0,indexOfVowel)
+    let beforeCons = eachWord.slice(indexOfVowel)
+    eachWord = beforeCons + afterCons + "ay"
   }
-  console.log(combineWord)
 
-// Story 2: In order to see English words converted to Pig Latin, as the user of the application, I need to see words that have "qu" in the first syllable translated by moving all the consonant and the "u" to the end and add "ay".**
 
-// **Branch:** qu-functionality
+  // In order to see English words converted to Pig Latin, as the user of the application, I need to see words that have one or more consonants translated by moving all the consonant to the end and add "ay".**
 
-// **Acceptance Criteria**
-
-// - Can type any word that has a "qu" in the first syllable in the text input (e.g. squeal)
-// - Can hit the submit button
-// - Can see the words that have a "qu" in the first syllable translated to Pig Latin and rendered to the page (e.g. ealsquay)
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord 
